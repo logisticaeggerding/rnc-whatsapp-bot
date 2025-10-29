@@ -50,7 +50,7 @@ app.post("/webhook", async (req, res) => {
           messaging_product: "whatsapp",
           to: from,
           text: {
-            body: "👋 Olá! Recebi sua mensagem e logo entrarei em contato. 📋"
+            body: "👋 Olá! Em que posso ajudar hoje?. 📋"
           }
         },
         {
