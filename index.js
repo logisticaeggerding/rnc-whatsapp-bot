@@ -39,7 +39,7 @@ app.post("/webhook", async (req, res) => {
       console.log(`📨 Mensagem de ${from}: ${text}`);
 
       // Enviar resposta automática
-      const resposta = "👋 Olá! Em que posso te ajudar hoje?.";
+      const resposta = "👋 Olá! Em que posso ajudar hoje?";
       await axios.post(
         `https://graph.facebook.com/v22.0/${PHONE_NUMBER_ID}/messages`,
         {
@@ -58,4 +58,13 @@ app.post("/webhook", async (req, res) => {
       console.log("✅ Resposta enviada com sucesso!");
     }
   } catch (error) {
-    console.error("❌ Erro ao processar mensagem:", error.me
+    console.error("❌ Erro ao processar mensagem:", error.message);
+  }
+
+  res.sendStatus(200);
+});
+
+// 🔹 Porta padrão da Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Servidor rodando na porta ${PORT}`));
+
